@@ -6,6 +6,7 @@ import ResetPassword from "../pages/login/ResetPassword";
 import SignIn from "../pages/login/SignIn";
 import SignUp from "../pages/login/SignUp";
 import CompareProduct from "../pages/CompareProduct";
+import Tesiapi from  "../api/testapi"
 
 export const routes=[
     {
@@ -41,6 +42,11 @@ export const routes=[
     {
         path:'/compare',
         page: CompareProduct,
+        isShowHeader:false,
+    },
+    {
+        path:'/testapi',
+        page: Tesiapi,
         isShowHeader:false,
     },
     {
