@@ -10,6 +10,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Register from '../../components/User/SignUp';
 
 function Copyright(props) {
   return (
@@ -27,6 +28,11 @@ function Copyright(props) {
 // TODO remove, this demo shouldn't need to reset the theme.
 
 const defaultTheme = createTheme();
+
+const handleSignupSubmit=(value)=>{
+  console.log('Form submit: ', value);
+  //khi submit gọi hàm này
+};
 
 export default function SignUp() {
   const handleSubmit = (event) => {
@@ -53,16 +59,17 @@ export default function SignUp() {
         <Typography>
             <h1>REMISE</h1>
         </Typography>
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign up
-          </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
-                <TextField
+        {/* <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <LockOutlinedIcon />
+        </Avatar>
+        <Typography component="h1" variant="h5">
+          Sign up
+        </Typography> */}
+        <Register />
+        {/* <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+          <Grid container spacing={2}>
+            <Grid item xs={12} sm={6}>
+              <TextField
                   autoComplete="given-name"
                   name="firstName"
                   required
@@ -130,7 +137,7 @@ export default function SignUp() {
                 </Link>
               </Grid>
             </Grid>
-          </Box>
+          </Box> */}
         </Box>
         <Copyright sx={{ mt: 5 }} />
       </Container>
