@@ -7,6 +7,7 @@ import InputField from '../../FormControl/InputField'
 import { Avatar, Button, Grid, IconButton, Link, Typography} from '@mui/material'
 import LockOutlined from '@mui/icons-material/LockOutlined'
 import { style } from '@mui/system'
+import axiosClient from '../../../api/axiosClient'
 
 RegisterForm.propTypes = {
     onSubmit: PropTypes.func,
@@ -16,8 +17,13 @@ function RegisterForm(props) {
     // const classes = useStyles();
     const schema=yup.object().shape({
         firstname: yup.string().required('Please enter title').min(5, 'Title is too short'),
+        lastname: yup.string().required('Please enter your lastname'),
+        email: yup.string().email('Invalid email').required('Please enter your email'),
+        password: yup.string().min(6, 'Password must be at lease 6 characters'),
+        confpassword: yup.string().oneOf([yup.ref('password'), null], 'Passwords must match').required('Please confirm your password'),
     })
-    const form=useForm({
+    const form 
+        = useForm({
         defaultValues:{
             firstname:'',//khai báo hết để không bị undefinded
             lastname:'',
@@ -27,10 +33,14 @@ function RegisterForm(props) {
         },
         resolver: yupResolver(schema),
     });
-    const handleSubmit=(values)=>{
-        const {onSubmit}= props;
+    const submitHandler= async(values)=>{
+        const {onSubmit}= props;//??sao bỏ
         if (onSubmit){
-            onSubmit(values);
+            try{
+                await onSubmit(values);
+            } catch(error){
+                console.error('Error submitting form: ', error);
+            }
         }
         form.reset();
     }
@@ -42,15 +52,14 @@ function RegisterForm(props) {
             <Typography className='title' component="h3" variant="h5">
                 Sign Up
             </Typography>
-            <form onSubmit={form.handleSubmit(handleSubmit)}>
+            <form onSubmit={form.handleSubmit(submitHandler)}>
                 <InputField name="firstname" label ="First Name" form={form} width="48%" marginRight="4%"/>
                 <InputField name="lastname" label ="Last Name" form={form} xs={12} sm={6} width="48%"/>
                 <InputField name="email" label ="Email" form={form} xs={12}/>
                 <InputField name="password" label ="Password" form={form} fullWidth/>
                 <InputField name="confpassword" label ="ConffirmPassword" form={form} xs={12}/>
-
-                <Button variant='contained' color='primary' fullWidth sx={{ mt: 3, mb: 2 }}>Sign Up</Button>
-                <Link href="#" variant="body2">
+                <Button variant='contained' color='primary' fullWidth sx={{ mt: 3, mb: 2 }} type='submit'>Sign Up</Button>
+                <Link href="/signin" variant="body2">
                   Already have an account? Sign in
                 </Link>
             </form>

@@ -2,14 +2,20 @@ import axios from 'axios'
 
 const axiosClient = axios.create({
     baseURL:`${process.env.REACT_APP_API_URL}`,
+    timeout:5000,//optional
     headers: {
         'Content-Type': 'application/json',
-    }
+    },
 })
 // Interceptors
 // Add a request interceptor
-axios.interceptors.request.use(function (config) {
+axios.interceptors.request.use(
+  function (config) {
     // Do something before request is sent
+    const token = localStorage.getItem('token'); // Or any other method of getting a token
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
     return config;
   }, function (error) {
     // Do something with request error

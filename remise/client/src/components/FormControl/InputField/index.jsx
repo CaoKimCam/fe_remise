@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { TextField } from '@mui/material';
 import { Controller } from 'react-hook-form';
@@ -13,6 +13,7 @@ InputField.propTypes = {
 
 function InputField(props) {
     const {form, name, label, disabled, width, marginRight}=props;
+    // const [value, setValue]=useState('');
     return (
         <Controller
             name={name}

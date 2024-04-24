@@ -1,18 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import RegisterForm from '../SignUpForm';
 
-Register.propTypes = {
+Register.prototype = {
     
 };
 
 function Register(props) {
-    const handleSubmit=(values)=>{
-        console.log('Form submiti: ', values);
+    const handleRegisterSubmit=(values)=>{
+        console.log('Form submit: ', values);
     };
     return (
         <div>
-            <RegisterForm onSubmit={handleSubmit}/>
+            <RegisterForm onSubmit={handleRegisterSubmit}/>
         </div>
     );
 }
