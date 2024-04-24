@@ -8,6 +8,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Register from '../../components/User/SignUp';
 import axiosClient from '../../api/axiosClient';
 import { register } from '../../api/userapi';
+import RegisterForm from '../../components/User/SignUpForm';
 
 function Copyright(props) {
   return (
@@ -27,24 +28,25 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 
-// const handleSignupSubmit=async(value)=>{
-//   console.log('Form submit: ', value);
-//   register('data');
-//   // try {
-//   //   const response = await axiosClient.post('api/signup', value);
-//   //   console.log('Registration successful: ', response.data);
-//   // }
-//   // catch(error){
-//   //   console.log('Error during registration: ', error);
-//   // }
-//   //khi submit gọi hàm này
-// };
-
-const handleSignupSubmit=(data)=>{
-  console.log('Form submit: ', data);
-  console.log('Form submit: ', data);
+const handleSignupSubmit=async(value)=>{
+  console.log('Form submit: ', value);
+  register('data');
+  // try {
+  //   const response = await axiosClient.post('api/signup', value);
+  //   console.log('Registration successful: ', response.data);
+  // }
+  // catch(error){
+  //   console.log('Error during registration: ', error);
+  // }
   //khi submit gọi hàm này
 };
+
+// const handleSignupSubmit=(data)=>{
+//   console.log('ok');
+//   console.log('Form submit from SignUp: ', data);
+//   // console.log('Form submit: ', data);
+//   //hàm test form
+// };
 export default function SignUp() {
   // const handleSubmit = (event) => {
   //   event.preventDefault();
@@ -71,8 +73,8 @@ export default function SignUp() {
         <Typography>
             <h1>REMISE</h1>
         </Typography>
-        {/* <Register onSubmit={handleSignupSubmit}/> */}
-        <Register onSubmit={console.log('OK')}/>
+        <RegisterForm onSubmit={handleSignupSubmit}/>
+        {/* <Register onSubmit={console.log('OK')}/> */}
         </Box>
         <Copyright sx={{ mt: 5 }}/>
       </Container>
