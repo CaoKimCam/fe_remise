@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const axiosClient = axios.create({
     // baseURL:`${process.env.REACT_APP_API_URL}`,
-    baseURL:`/remise`,
+    baseURL:'https://jsonplaceholder.typicode.com',
     timeout:5000,//optional
     headers: {
         'Content-Type': 'application/json',

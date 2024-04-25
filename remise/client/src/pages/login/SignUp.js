@@ -29,8 +29,8 @@ const defaultTheme = createTheme();
 
 
 const handleSignupSubmit=async(value)=>{
-  console.log('Form submit: ', value);
-  register('data');
+  console.log('Form submitt: ', JSON.stringify(value));
+  register(JSON.stringify(value));
   // try {
   //   const response = await axiosClient.post('api/signup', value);
   //   console.log('Registration successful: ', response.data);
