@@ -12,7 +12,7 @@ InputField.propTypes = {
 };
 
 function InputField(props) {
-    const {form, name, label, disabled, width, marginRight}=props;
+    const {form, name, label, disabled, width, marginRight,...rest}=props;
     // const [value, setValue]=useState('');
     return (
         <Controller
@@ -30,6 +30,7 @@ function InputField(props) {
             onBlur={onBlur} // notify when input is touched
             inputRef={ref} // wire up the input ref
             sx={{width:width, mr:marginRight}}
+            {...rest} // Truyền các thuộc tính bổ sung
             fullWidth
             />)}
         />

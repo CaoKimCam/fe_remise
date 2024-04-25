@@ -5,8 +5,6 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Register from '../../components/User/SignUp';
-import axiosClient from '../../api/axiosClient';
 import { register } from '../../api/userapi';
 import RegisterForm from '../../components/User/SignUpForm';
 
