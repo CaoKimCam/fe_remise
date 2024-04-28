@@ -26,7 +26,6 @@ const MenuProps = {
 };
 
 
-
 const names = [
   'Quần áo',
   'Giày dép',
@@ -151,7 +150,7 @@ function BestSales(){
 
 function HomePage() {
   return (
-    <div style={{background: '#f7f7f7'}}>
+    <div style={{background: '#ffffff'}}>
       <div id="category" style={{background:'#fff'}}>
         <Category/>
       </div>

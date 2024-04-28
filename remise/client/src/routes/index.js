@@ -7,6 +7,7 @@ import SignIn from "../pages/login/SignIn";
 import SignUp from "../pages/login/SignUp";
 import CompareProduct from "../pages/CompareProduct";
 import Tesiapi from  "../api/testapi"
+import testPostApi from "../api/testpostapi"
 
 export const routes=[
     {
@@ -47,6 +48,11 @@ export const routes=[
     {
         path:'/testapi',
         page: Tesiapi,
+        isShowHeader:false,
+    },
+    {
+        path:'/testpostapi',
+        page: testPostApi,
         isShowHeader:false,
     },
     {

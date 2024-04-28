@@ -8,8 +8,8 @@ function FooterComponent() {
         <div id='footer'>
             <hr></hr>
             <div className='footer-introduction'>
-                <img className='logo item' src={logo} alt='logo'></img>
-                <h5 className='item'>CÔNG TY CỔ PHẦN SO SÁNH VIỆT NAM</h5>            </div>
+                <img className='logo item' src={logo} alt='logo' style={{width:'60px', height:'60px'}}></img>
+        </div>
             <div className='footer-help'>
                 <h5>HỖ TRỢ KHÁCH HÀNG</h5>
                 <h8>Các câu hỏi thường gặp</h8>

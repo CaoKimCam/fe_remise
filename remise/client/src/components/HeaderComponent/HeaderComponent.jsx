@@ -32,13 +32,15 @@ function HeaderComponent() {
   return (
       <Box>
         <Grid className='header-bar' container spacing={1} columns={12}>
-          <Grid xs={3}>
-            <img className='logo' src={logo} alt='Logo Remise' onClick={handleClickLogo} style={{cursor:'pointer'}}/>
+        <Grid item xs={1}></Grid>
+          <Grid item xs={1}>
+            <img className='logo' src={logo} alt='Logo Remise' onClick={handleClickLogo} style={{cursor:'pointer', width:'60px', height:'60px'}}/>
           </Grid>
-          <Grid className='header-item search' xs={5}>
+          
+          <Grid className='header-item search' item xs={6} container spacing={3}>
             {/* tìm kiếm */}
             <Paper component="form"
-              sx={{ p: '1px 4px', display: 'flex', alignItems: 'center', width: 500 }}>
+              sx={{ p: '1px 4px', display: 'flex', alignItems: 'center', width: 550}}>
               <InputBase
                 sx={{ ml: 1, flex: 1 }}
                 placeholder="Tìm kiếm sản phẩm"/>
@@ -55,10 +57,8 @@ function HeaderComponent() {
                 <div>Tài khoản</div>
                 <ArrowDropDownIcon />
               </Grid>
-              <div className='item'>
-                <Link to="/signin" style={{textDecoration:"none", color:"black"}}>Đăng nhập</Link>
-                <div>&nbsp;/&nbsp;</div>
-                <Link to="/signup" style={{textDecoration:"none", color:"black"}}>Đăng ký</Link>
+              <div className='item' >
+                <Link to="/signin" style={{textDecoration:"none", color:"black", paddingLeft:"20px"}}>Đăng nhập</Link>
               </div>
             </Grid>
             {/* đăng nhập, đăng ký */}
