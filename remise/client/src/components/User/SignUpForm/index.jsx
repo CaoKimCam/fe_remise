@@ -4,10 +4,9 @@ import React from 'react'
 import {useForm} from 'react-hook-form'
 import * as yup from 'yup'
 import InputField from '../../FormControl/InputField'
-import { Avatar, Button, Grid, IconButton, Link, Typography} from '@mui/material'
+import { Avatar, Button, Grid, Link, Typography} from '@mui/material'
 import LockOutlined from '@mui/icons-material/LockOutlined'
-import { style } from '@mui/system'
-import axiosClient from '../../../api/axiosClient'
+
 
 RegisterForm.propTypes = {
     onSubmit: PropTypes.func,
