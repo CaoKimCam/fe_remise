@@ -2,13 +2,10 @@ import React from 'react'
 
 import SliderComponent from '../../components/SliderComponent/SliderComponent';
 import FlashOnIcon from '@mui/icons-material/FlashOn';
-import Button from '@mui/material/Button';
-import { Grid, Typography} from '@mui/material';
-import ProductFlashSale from '../../components/HomePage/ProductFlashSale';
+import { Divider, Grid, Typography} from '@mui/material';
 import ProductFeature from '../../components/Product/ProductFeature';
 import HeroPage from '../../components/HeaderComponent/HeroPage';
 import Category from '../../components/HeaderComponent/Category/Category';
-import { pink } from '@mui/material/colors';
 
 function FlashSale(){
   return (
@@ -61,13 +58,13 @@ function HomePage() {
         </Grid>
         <Grid>
           <FlashSale ></FlashSale>
+          <Divider sx={{mt:2}}></Divider>
           <BestSales></BestSales>
+          <Divider sx={{mt:2}}></Divider>
           <Deals></Deals>
         </Grid>
       </Grid>
-     
-      <div id="footer">
-      </div>
+      <Divider sx={{mt:2}}></Divider>
     </Grid>
   )
 }
