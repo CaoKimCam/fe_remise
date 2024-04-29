@@ -29,6 +29,23 @@ function ProductFeature() {
         thumbnailUrl: tiviImage,
         price: 10
     },
+    {
+      id:4,
+      name: 'TiviSony4',
+      thumbnailUrl: tiviImage,
+      price: 10},
+      {
+        id:4,
+        name: 'TiviSony4',
+        thumbnailUrl: tiviImage,
+        price: 10
+      },
+    {
+        id:4,
+        name: 'TiviSony4',
+        thumbnailUrl: tiviImage,
+        price: 10
+    },
   ]
   return (
     <div>

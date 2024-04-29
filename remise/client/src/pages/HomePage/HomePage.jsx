@@ -14,10 +14,10 @@ function FlashSale(){
   return (
       <Grid mt={5}>
         <Grid sx={{display: 'flex'}} mb={1} padding={0.5}>
-          <FlashOnIcon sx={{color: 'red', height:'auto', width:'40px'}}/>
-          <Typography sx={{mr:1, color:'red'}} variant='h4'>Flash Sale</Typography>
+          <FlashOnIcon sx={{color: 'red', height:'auto', width:'35px'}}/>
+          <Typography sx={{mr:1, color:'red'}} variant='h5'>Flash Sale</Typography>
           <Grid>
-            <Typography variant='h4'>06</Typography>
+            <Typography variant='h5'>06</Typography>
           </Grid>
         </Grid>
         <ProductFeature/>
@@ -54,7 +54,7 @@ function HomePage() {
     <Grid>
       <HeroPage id="hero"
       />
-      <Grid m={12}>
+      <Grid m={20}>
         <Category/>
         <Grid>
             <SliderComponent/> 
