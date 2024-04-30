@@ -49,8 +49,6 @@ function BestSales(){
 function HomePage() {
   return (
     <Grid>
-      <HeroPage id="hero"
-      />
       <Grid m={20}>
         <Category/>
         <Grid>

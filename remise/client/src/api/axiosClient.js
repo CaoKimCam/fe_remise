@@ -2,7 +2,8 @@ import axios from 'axios'
 
 const axiosClient = axios.create({
     // baseURL:`${process.env.REACT_APP_API_URL}`,
-    baseURL:'https://jsonplaceholder.typicode.com',
+    // baseURL:'https://662f83ae43b6a7dce30fc0c3.mockapi.io/products',
+    baseURL:'https://jsonplaceholder.typicode.com/',
     timeout:5000,//optional
     headers: {
         'Content-Type': 'application/json',

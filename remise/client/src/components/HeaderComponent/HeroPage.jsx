@@ -8,9 +8,12 @@ function HeroPage() {
       id="hero"
       sx={(theme) => ({
         width: '100%',
-        backgroundSize: '100% 20%',
+        // backgroundSize: '100% 20%',
         backgroundRepeat: 'no-repeat',
-        backgroundImage: 'linear-gradient(to bottom, rgba(52, 152, 219, 0.7), #ffffff)'
+        pt: { xs: 14, sm: 20 },
+        pb: { xs: 8, sm: 12 },
+        backgroundImage: 'linear-gradient(to bottom, rgba(52, 152, 219, 0.4), #ffffff)',
+
       })}
     >
       <Container
@@ -18,8 +21,6 @@ function HeroPage() {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          pt: { xs: 14, sm: 20 },
-          pb: { xs: 8, sm: 12 },
         }}
       >
         <Stack spacing={2} useFlexGap sx={{ width: { xs: '100%', sm: '70%' } }}>
@@ -54,27 +55,6 @@ function HeroPage() {
             Compare products in shops.
           </Typography>
         </Stack>
-        {/* <Box
-          id="image"
-          sx={(theme) => ({
-            mt: { xs: 8, sm: 10 },
-            alignSelf: 'center',
-            height: { xs: 200, sm: 700 },
-            width: '100%',
-            backgroundImage:
-              theme.palette.mode =
-                'url("/static/images/templates/templates-images/hero-light.png")',
-            backgroundSize: 'cover',
-            borderRadius: '10px',
-            outline: '1px solid',
-            outlineColor:
-              theme.palette.mode =
-                alpha('#BFCCD9', 0.5),
-            boxShadow:
-              theme.palette.mode =
-                `0 0 12px 8px ${alpha('#9CCCFC', 0.2)}`,
-          })}
-        /> */}
       </Container>
     </Box>
   )

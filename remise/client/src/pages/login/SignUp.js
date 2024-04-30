@@ -29,14 +29,15 @@ const defaultTheme = createTheme();
 const handleSignupSubmit=async(value)=>{
   console.log('Form submitt: ', JSON.stringify(value));
   register(JSON.stringify(value));
-  // try {
-  //   const response = await axiosClient.post('api/signup', value);
-  //   console.log('Registration successful: ', response.data);
-  // }
-  // catch(error){
-  //   console.log('Error during registration: ', error);
-  // }
-  //khi submit gọi hàm này
+  try {
+    // const response = await axiosClient.post('api/signup', value);
+    const response = await register(JSON.stringify(value));
+    console.log('Registration successful: ', response);
+  }
+  catch(error){
+    console.log('Error during registration: ', error);
+  }
+  // khi submit gọi hàm này
 };
 
 // const handleSignupSubmit=(data)=>{

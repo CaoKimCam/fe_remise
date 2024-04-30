@@ -5,6 +5,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
 import { styled, alpha } from '@mui/material/styles';
 import logo from '../../resources/images/logo_remise.png';
+import HeroPage from './HeroPage';
 
 const logoStyle={
   width: '100px',
@@ -193,6 +194,7 @@ function HeaderComponent() {
             </Toolbar>
           </Container>
         </AppBar>
+        <HeroPage id="hero"/>
       </div>
   )
 }
