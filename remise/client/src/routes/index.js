@@ -6,7 +6,7 @@ import ResetPassword from "../pages/login/ResetPassword";
 import SignIn from "../pages/login/SignIn";
 import SignUp from "../pages/login/SignUp";
 import CompareProduct from "../pages/CompareProduct";
-
+import SearchForm from "../components/FillterProduct/SearchForm";
 export const routes=[
     {
         path:'/',
@@ -41,6 +41,11 @@ export const routes=[
     {
         path:'/compare',
         page: CompareProduct,
+        isShowHeader:false,
+    },
+    {
+        path:'/searchform',
+        page: SearchForm,
         isShowHeader:false,
     },
     {
