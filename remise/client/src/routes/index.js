@@ -7,6 +7,8 @@ import SignIn from "../pages/login/SignIn";
 import SignUp from "../pages/login/SignUp";
 import CompareProduct from "../pages/CompareProduct";
 import SearchForm from "../components/FillterProduct/SearchForm";
+import Chart from "../pages/ProductPage/Chart";
+import Dashboard from "../pages/ProductPage/Dashboard";
 export const routes=[
     {
         path:'/',
@@ -46,6 +48,16 @@ export const routes=[
     {
         path:'/searchform',
         page: SearchForm,
+        isShowHeader:false,
+    },
+    {
+        path:'/chart',
+        page: Chart,
+        isShowHeader:false,
+    },
+    {
+        path:'/dashboard',
+        page: Dashboard,
         isShowHeader:false,
     },
     {
