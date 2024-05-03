@@ -1,13 +1,14 @@
-import * as React from 'react';
+import React from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
-import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { register } from '../../api/userapi';
 import RegisterForm from '../../components/User/SignUpForm';
+import { Link } from '@mui/material';
 
+const defaultTheme = createTheme();
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -21,42 +22,18 @@ function Copyright(props) {
   );
 }
 
-// TODO remove, this demo shouldn't need to reset the theme.
-
-const defaultTheme = createTheme();
-
-
-const handleSignupSubmit=async(value)=>{
-  console.log('Form submitt: ', JSON.stringify(value));
-  register(JSON.stringify(value));
-  try {
-    // const response = await axiosClient.post('api/signup', value);
-    const response = await register(JSON.stringify(value));
-    console.log('Registration successful: ', response);
-  }
-  catch(error){
-    console.log('Error during registration: ', error);
-  }
-  // khi submit gọi hàm này
-};
-
-// const handleSignupSubmit=(data)=>{
-//   console.log('ok');
-//   console.log('Form submit from SignUp: ', data);
-//   // console.log('Form submit: ', data);
-//   //hàm test form
-// };
 export default function SignUp() {
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   const data = new FormData(event.currentTarget);
-  //   console.log({
-  //     email: data.get('email'),
-  //     password: data.get('password'),
-  //   });
-  // };
+  const handleSignupSubmit = async (values) => {
+    try {
+      const response = await register(values);
+      console.log('Registration successful: ', response);
+      // Đăng ký thành công, thực hiện các hành động sau khi đăng ký
+    } catch (error) {
+      console.error('Error during registration: ', error);
+      // Đăng ký thất bại
+    }
+  };
 
-  
   return (
     <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">
@@ -69,13 +46,11 @@ export default function SignUp() {
             alignItems: 'center',
           }}
         >
-        <Typography>
+          <Typography>
             <h1>REMISE</h1>
-        </Typography>
-        <RegisterForm onSubmit={handleSignupSubmit}/>
-        {/* <Register onSubmit={console.log('OK')}/> */}
+          </Typography>
+          <RegisterForm onSubmit={handleSignupSubmit} />
         </Box>
-        <Copyright sx={{ mt: 5 }}/>
       </Container>
     </ThemeProvider>
   );
