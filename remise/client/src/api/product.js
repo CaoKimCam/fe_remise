@@ -1,9 +1,9 @@
-//
-import axiosClient from './axiosClient';
-export const register =async (user)=>{
+import axiosClient from "./axiosClient";
+
+export const getFlashSaleProduct=async()=>{
     try {
         // const response = await axiosClient.post("/signup", user);
-        const response = await axiosClient.post("/posts", user);
+        const response = await axiosClient.get("/productFlashSale");
         return response.data;
     } catch (err) {
         return {
@@ -15,4 +15,3 @@ export const register =async (user)=>{
         };
     }
 }
-

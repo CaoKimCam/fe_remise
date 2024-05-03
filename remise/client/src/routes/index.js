@@ -6,9 +6,9 @@ import ResetPassword from "../pages/login/ResetPassword";
 import SignIn from "../pages/login/SignIn";
 import SignUp from "../pages/login/SignUp";
 import CompareProduct from "../pages/CompareProduct";
-import Tesiapi from  "../api/testapi"
-import testPostApi from "../api/testpostapi"
-
+import SearchForm from "../components/FillterProduct/SearchForm";
+import Chart from "../pages/ProductPage/Chart";
+import Dashboard from "../pages/ProductPage/Dashboard";
 export const routes=[
     {
         path:'/',
@@ -46,13 +46,18 @@ export const routes=[
         isShowHeader:false,
     },
     {
-        path:'/testapi',
-        page: Tesiapi,
+        path:'/searchform',
+        page: SearchForm,
         isShowHeader:false,
     },
     {
-        path:'/testpostapi',
-        page: testPostApi,
+        path:'/chart',
+        page: Chart,
+        isShowHeader:false,
+    },
+    {
+        path:'/dashboard',
+        page: Dashboard,
         isShowHeader:false,
     },
     {

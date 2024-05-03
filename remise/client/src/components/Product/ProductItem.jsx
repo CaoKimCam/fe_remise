@@ -4,11 +4,12 @@ import { CardActionArea, CardContent, CardMedia, Typography } from '@mui/materia
 
 function ProductItem({ productItem }) {
   return (
-    <Card style={{width:"25%"}}>
+    <Card>
         <CardActionArea>
           <CardMedia
             component="img"
             height="140"
+            width="100"
             src={productItem.thumbnailUrl}
             alt={productItem.name}
           />
