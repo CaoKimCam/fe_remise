@@ -128,7 +128,7 @@ function HeaderComponent() {
                 <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                   <MenuItem
                     onClick={() => scrollToSection('flash-sale')}
-                    sx={{ py: '6px', px: '22px' }}
+                    sx={{ py: '6px', px: '12px' }}
                   >
                     <Typography variant="body2" color="text.primary" >
                       Flash Sale
@@ -136,18 +136,18 @@ function HeaderComponent() {
                   </MenuItem>
                   <MenuItem
                     onClick={() => scrollToSection('best-sale')}
-                    sx={{ py: '6px', px: '22px' }}
+                    sx={{ py: '6px', px: '12px' }}
                   >
                     <Typography variant="body2" color="text.primary">
-                      Best Selling Products
+                      Sản phẩm bán chạy nhất
                     </Typography>
                   </MenuItem>
                   <MenuItem
                     onClick={() => scrollToSection('deal')}
-                    sx={{ py: '6px', px: '22px' }}
+                    sx={{ py: '6px', px: '12px' }}
                   >
                     <Typography variant="body2" color="text.primary">
-                      Deals of the Day
+                      Gợi ý hôm nay
                     </Typography>
                   </MenuItem>
                   <Grid flexGrow={2}></Grid>
@@ -181,7 +181,7 @@ function HeaderComponent() {
                   href="/searchform/"
                   target="_blank"
                 >
-                  Fillter
+                  Lọc
                 </Button>
                   <Button
                   color="primary"
@@ -191,7 +191,7 @@ function HeaderComponent() {
                   href="/signin/"
                   target="_blank"
                 >
-                  Sign in
+                  Đăng nhập
                 </Button>
                 <Button
                   color="primary"
@@ -201,7 +201,7 @@ function HeaderComponent() {
                   href="signup"
                   target="_blank"
                 >
-                  Sign up
+                  Đăng ký
                 </Button>
                 </div>
               }
