@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import Box from '@mui/material/Box';
-import { AppBar, Button, Container, Divider, Grid, IconButton, MenuItem, Paper, Toolbar, Typography, useTheme } from '@mui/material';
+import { AppBar, Button, Container, Grid, IconButton, MenuItem, Paper, Toolbar, Typography, useTheme } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
 import { styled, alpha } from '@mui/material/styles';
 import logo from '../../resources/images/logo_remise.png';
 import HeroPage from './HeroPage';
-import ProductFeature from '../Product/ProductFeature';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { useLocation } from 'react-router-dom';
 
 const logoStyle={
   width: '50px',
@@ -59,9 +59,9 @@ function handleClickLogo(){
   return window.location.reload();
 }
 
-function HeaderComponent(isHome) {
-  var isHomePage= true;
-  if (isHome===false) isHomePage=false;
+function HeaderComponent() {
+  const location = useLocation();
+  const isHome = location.pathname === '/';
   const [auth, setAuth]= useState(false);
   const scrollToSection = (sectionId) => {
     const sectionElement = document.getElementById(sectionId);
@@ -124,7 +124,7 @@ function HeaderComponent(isHome) {
                   style={logoStyle}
                   alt="logo of sitemark"
                 />
-                {isHomePage&&
+                {isHome&&
                 <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                   <MenuItem
                     onClick={() => scrollToSection('flash-sale')}

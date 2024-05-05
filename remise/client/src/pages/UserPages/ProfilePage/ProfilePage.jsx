@@ -9,7 +9,6 @@ import HeaderComponent from '../../../components/HeaderComponent/HeaderComponent
 function ProfilePage() {
   return (
     <div>
-      <HeaderComponent isHome="false"/>
       <div className='profile'>
       <div className='left-side-bar'>
         <div className='username left-side-bar-item'>

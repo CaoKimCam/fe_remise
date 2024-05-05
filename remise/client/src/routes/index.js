@@ -25,7 +25,7 @@ export const routes=[
     {
         path:'/profile',
         page: ProfilePage,
-        isShowHeader:false,
+        isShowHeader:true,
     },
     {
         path:'/reset-password',
