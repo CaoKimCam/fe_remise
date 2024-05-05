@@ -9,6 +9,8 @@ import CompareProduct from "../pages/CompareProduct";
 import SearchForm from "../components/FillterProduct/SearchForm";
 import Chart from "../pages/ProductPage/Chart";
 import Dashboard from "../pages/ProductPage/Dashboard";
+import Account from "../pages/UserPages/ProfilePage/Account";
+import NoticePage from "../pages/UserPages/ProfilePage/Notice";
 export const routes=[
     {
         path:'/',
@@ -23,7 +25,7 @@ export const routes=[
     {
         path:'/profile',
         page: ProfilePage,
-        isShowHeader:true,
+        isShowHeader:false,
     },
     {
         path:'/reset-password',
@@ -51,13 +53,18 @@ export const routes=[
         isShowHeader:false,
     },
     {
-        path:'/chart',
-        page: Chart,
+        path:'/dashboard',
+        page: Dashboard,
         isShowHeader:false,
     },
     {
-        path:'/dashboard',
-        page: Dashboard,
+        path:'/account',
+        page: Account,
+        isShowHeader:false,
+    },
+    {
+        path:'/notice',
+        page: NoticePage,
         isShowHeader:false,
     },
     {
