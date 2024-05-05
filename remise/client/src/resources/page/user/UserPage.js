@@ -1,23 +1,30 @@
 import React from 'react'
-import './HeaderComponent.css'
-import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
+import '../../../styles/HeaderComponent.css'
 
 
 //material ui
 import Grid from '@mui/material/Grid'
 import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+
+import CssBaseline from '@mui/material/CssBaseline';
+
+
 import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import logo from '../../resources/images/logo_remise.png';
-import { Badge } from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
+import Link from '@mui/material/Link';
+import { createTheme } from '@mui/system';
+
+import logo from '../../images/logo.svg'
+
 // import icon
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
-import SearchIcon from '@mui/icons-material/Search';
-
+import { Typography } from '@mui/material';
 function StoreIcon(props) {
   return (
     <LocalGroceryStoreIcon {...props}>
@@ -25,15 +32,13 @@ function StoreIcon(props) {
     </LocalGroceryStoreIcon>
   );
 }
-function handleClickLogo(){
-  return window.location.reload();
-}
+
 function HeaderComponent() {
   return (
       <Box>
         <Grid className='header-bar' container spacing={1} columns={12}>
           <Grid xs={3}>
-            <img className='logo' src={logo} alt='Logo Remise' onClick={handleClickLogo} style={{cursor:'pointer'}}/>
+            <img className='logo' src={logo} alt='Logo Remise'/>
           </Grid>
           <Grid className='header-item search' xs={5}>
             {/* tìm kiếm */}
@@ -49,29 +54,63 @@ function HeaderComponent() {
             </Paper>
           </Grid>
           <Grid xs={2}>
-            <Grid className='header-item'>
+            <Grid className='header-item header-right'>
               <Grid className='item'>
                 <AccountCircle className='mgr4'/>
                 <div>Tài khoản</div>
                 <ArrowDropDownIcon />
               </Grid>
               <div className='item'>
-                <Link to="/signin" style={{textDecoration:"none", color:"black"}}>Đăng nhập</Link>
+                <div>Đăng nhập</div>
                 <div>&nbsp;/&nbsp;</div>
-                <Link to="/signup" style={{textDecoration:"none", color:"black"}}>Đăng ký</Link>
+                <div>Đăng ký</div>
               </div>
             </Grid>
             {/* đăng nhập, đăng ký */}
           </Grid>
           <Grid className='header-item' sx={{display:'flex'}}>
-              <Badge badgeContent={4} color="primary" sx={{marginRight: 1}}>
-                <StoreIcon className='mgr4'/>
-              </Badge>
+              <StoreIcon className='mgr4'/>
               <Grid>Giỏ hàng</Grid>
-          </Grid>        
+          </Grid>
+          
         </Grid>
       </Box>
   )
 }
 
-export default HeaderComponent
+function Copyright(props) {
+    return (
+      <Typography variant="body2" color="text.secondary" align="center" {...props}>
+        {'Copyright © '}
+        <Link color="inherit" href="https://mui.com/">
+          Remise
+        </Link>{' '}
+        {new Date().getFullYear()}
+        {'.'}
+      </Typography>
+    );
+  }
+
+const defaultTheme = createTheme();
+
+export default function Profile(){
+    return(
+        <Container component="main" maxWidth="xl">
+            <HeaderComponent/>
+            <CssBaseline />
+            <Typography>Test</Typography>            
+            <Box
+                sx={{
+                    position: 'fixed',
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    padding: '1rem',
+                }}
+        >
+            <Copyright/>
+        </Box>
+        </Container>
+        
+    );
+}

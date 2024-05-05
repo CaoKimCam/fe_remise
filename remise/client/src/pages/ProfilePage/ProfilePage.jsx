@@ -1,29 +1,35 @@
 import React from 'react'
 import './ProfilePage.css'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
 import CircleNotificationsIcon from '@mui/icons-material/CircleNotifications';
-import ProductFlashSale from '../../../components/HomePage/ProductFlashSale'
-import { Badge, Link, Stack } from '@mui/material';
-import HeaderComponent from '../../../components/HeaderComponent/HeaderComponent';
+import ModeEditRoundedIcon from '@mui/icons-material/ModeEditRounded';
+import ProductFlashSale from '../../components/HomePage/ProductFlashSale'
+import { Stack } from '@mui/material';
 
 function ProfilePage() {
   return (
-    <div>
-      <HeaderComponent isHome="false"/>
-      <div className='profile'>
+    <div className='profile'>
       <div className='left-side-bar'>
         <div className='username left-side-bar-item'>
           <AccountCircleIcon color='primary'/>
-          <Link href='/profile' ml={1} sx={{textDecoration:'none', color:'black', ml:1}}>Username</Link>
+          <h7>Username</h7>
         </div>
         <div className='account left-side-bar-item'>
           <AccountCircleIcon color='primary'/>
-          <Link href="/account" sx={{textDecoration:'none', color:'black', ml:1}}>Account</Link>        </div>
+          <h7>Account</h7>
+        </div>
+        <div className='store left-side-bar-item'>
+          <LocalGroceryStoreIcon color='primary' />
+          <h7>Store</h7>
+        </div>
         <div className='notice left-side-bar-item'>
-          <Badge badgeContent={4} color="secondary">
-            <CircleNotificationsIcon color='primary' />
-          </Badge>
-          <Link href='/notice' sx={{textDecoration:'none', color:'black', ml:1}} ml={1}>Notice</Link>
+          <CircleNotificationsIcon color='primary' />
+          <h7>Notice</h7>
+        </div>
+        <div className='edit left-side-bar-item'>
+          <ModeEditRoundedIcon color='primary' />
+          <h7>Edit profile</h7>
         </div>
       </div>
       <div className='profile-body'>
@@ -34,7 +40,6 @@ function ProfilePage() {
           <ProductFlashSale/>
         </Stack>
       </div>
-    </div>
     </div>
   )
 }
